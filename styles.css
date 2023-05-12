@@ -16,9 +16,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
-  /* background-color:#fff; */
   background-color: black;
-  /* color: #000; */
   position: relative;
   z-index: 1;
 }
@@ -115,9 +113,7 @@ li {
   top: 0;
   left: 0;
   width: 100%;
-  /* background-color: #dd9a05; */
   background-color: black;
-  /* background-color: #fff; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
@@ -267,20 +263,50 @@ li {
   text-decoration: underline;
 }
 
-.hero a:link,
-.hero a:visited {
+.hero .contact-me-button a:link,
+.hero .contact-me-button a:visited {
   display: inline-block;
   padding: 0.8rem 2.5rem;
   border: 1px solid #39ff14;
-  /* background-color: #dd9a05; */
-  background-color:#39ff14;
+  border-radius: 2px;
+  background-color: #39ff14;
   color: black;
   margin-top: 2rem;
 }
 
-.hero a:hover {
+
+.hero .contact-me-button a:hover {
   background-color: transparent;
-  color:#fff;
+  color: white;
+}
+
+.hero .fa-linkedin {
+  color: #39ff14; 
+  font-size:20px; 
+  margin-right:3px;
+}
+
+.hero .fa-linkedin:hover {
+  color: #fff; 
+}
+
+.hero .fa-github {
+  color: #39ff14; 
+  font-size:20px
+}
+
+.hero .fa-github:hover {
+  color: #fff; 
+}
+
+.hero .fa-medium {
+  color: #39ff14; 
+  font-size:20px
+}
+
+
+.hero .fa-medium:hover {
+  color: #fff; 
 }
 
 @media only screen and (max-width: 996px) {
@@ -420,8 +446,8 @@ a.btn {
 
 a.btn:hover {
   transform: translateY(-3px);
-  background-color: transparent;
-  color:  inherit;
+  background-color: black;
+  color:  white;
 }
 
 a.btn:active {
@@ -591,6 +617,164 @@ a.btn:active {
     grid-template-columns: 1fr;
   }
 }
+
+/* Experience */
+
+.timeline {
+  position: relative;
+}
+.timeline::before {
+  top: 140px;
+  content: '';
+  background: white;
+  width: 5px;
+  height: 88%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+}
+.timeline-item:nth-child(even) .timeline-content {
+  float: right;
+  padding: 40px 30px 10px 30px;
+}
+.timeline-item:nth-child(even) .timeline-content .date {
+  right: auto;
+  left: 0;
+}
+.timeline-item:nth-child(even) .timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+}
+.timeline-item::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 10px 30px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
+}
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+}
+.timeline-img {
+  width: 30px;
+  height: 30px;
+  background: #39ff14;
+  border: 7px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -15px;
+}
+.timeline a {
+  background: #dd9a05;
+  color: #fff;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, .6);
+}
+.timeline a:hover, .timeline a:active, .timeline a:focus {
+  background: black;
+  color: #fff;
+  text-decoration: none;
+}
+.timeline-card {
+  padding: 0 !important;
+}
+.timeline-card p {
+  padding: 0 20px;
+}
+.timeline-card a {
+  margin-left: 20px;
+}
+/* .timeline-item .timeline-img-header {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)), url('./images/logooffice.jpg') center center no-repeat;
+  background-size: cover;
+} */
+.timeline-img-header {
+  height: 200px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.timeline-img-header h2 {
+  color: black;
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+}
+blockquote {
+  margin-top: 30px;
+  color: #757575;
+  border-left-color: #3f51b5;
+  padding: 0 20px;
+}
+.date {
+  background: black;
+  display: inline-block;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 50px;
+ }
+  .timeline .timeline-img {
+    left: 50px;
+ }
+  .timeline .timeline-content {
+    max-width: 100%;
+    width: auto;
+    margin-left: 70px;
+ }
+  .timeline .timeline-item:nth-child(even) .timeline-content {
+    float: none;
+ }
+  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+ }
+}
+
+
+
+
 
 /* Teams */
 .team {
