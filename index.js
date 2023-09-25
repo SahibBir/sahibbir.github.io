@@ -63,9 +63,6 @@ new TypeIt("#type1", {
   .type("Software Engineer", { delay: 400 })
   .pause(500)
   .delete(18)
-  .type("Web Developer", { delay: 400 })
-  .pause(500)
-  .delete(12)
   .go();
 
 new TypeIt("#type2", {
